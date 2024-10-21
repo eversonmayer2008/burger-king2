@@ -1,104 +1,358 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programa de Fidelidade Burger King</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color:black;
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Corinthians | Site Oficial | Últimas notícias, resultados e próximos jogos.</title>
+    <meta name="description" content="Últimas notícias do Corinthians, jogos, resultados, escalação, fotos de treinos, futebol feminino, Neo Química Arena, Fiel Torcedor, basquete, futsal, natação, eSports do Timão." />
+    <style>
+        /* Estilos Gerais */
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* Navegação */
+nav {
+    background-color: #e7e7e7;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block; /* Trocar para inline-block para melhor responsividade */
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Destaques */
+.destaque {
+    background-color: #e20000;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Seções */
+.section {
+    margin-bottom: 40px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Imagens */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Botões */
+.btn {
+    background-color: #e20000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #d10000;
+}
+
+/* Redes sociais */
+.socials {
+    margin-top: 20px;
+}
+
+.socials a {
+    margin: 0 10px;
+    color: #e20000;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+/* Galeria */
+.gallery img {
+    width: 30%;
+    margin: 1%;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #e20000;
+    color: white;
+}
+
+/* Formulário de Contato */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block; /* Muda para block em telas menores */
+        margin: 5px 0;
     }
 
-    .container {
-        max-width: 800px;
-        margin: 20px auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .gallery img {
+        width: 48%; /* Duas imagens por linha */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em; /* Diminui o tamanho do título */
     }
 
-    h1 {
-        text-align: center;
-        color: #FFA500;
+    .gallery img {
+        width: 98%; /* Uma imagem por linha */
     }
-
-    p {
-        color: #333;
+    
+    .btn {
+        width: 100%; /* Botão ocupa toda a largura */
     }
+}
 
-    .loyalty-card {
-        width: 200px;
-        margin: 20px auto;
-        text-align: center;
-    }
 
-    .loyalty-card img {
-        max-width: 100%;
-        border-radius: 10px;
-    }
-
-    form {
-        margin-top: 30px;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="email"] {
-        width: calc(100% - 12px);
-        padding: 6px;
-        margin-bottom: 10px;
-    }
-
-    input[type="submit"] {
-        background-color: #FFA500;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-        background-color: #FF7F00;
-    }
-
-</style>
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Sport Club Corinthians Paulista</h1>
+        
+         <img src="https://static.corinthians.com.br/img/escudos/SCCP_escudo-150px.png" width="90" alt="Corinthians - Site Oficial">
+    </header>
+    
+    
+   
+    <nav>
+        <ul>
+            <li><a href="#noticias">Notícias</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#jogos">Próximos Jogos</a></li>
+            <li><a href="#equipe">Equipe</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#classificacao">Classificação</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    <img src="https://static.corinthians.com.br/uploads/6uvx5DR9/WhatsApp-Image-2024-09-20-at-11_26_12.jpeg">
 
-<div class="container">
-    <h1 style="color:red">Programa de Fidelidade Burger King</h1>
-    <p style="color:orange">Seja bem-vindo ao nosso programa de fidelidade! Apresente este cartão em suas compras para acumular pontos e obter descontos.</p>
-    <div class="loyalty-card">
-        <img src=https://i.pinimg.com/originals/88/0d/4f/880d4f0de6c0af5b28d41ca6db2fc4ef.png alt="Cartão de Fidelidade Burger King">
+    <div class="main-content">
+        <div class="destaque">
+            Últimas Notícias
+        </div>
+
+        <div class="section" id="noticias">
+        
+            <h2>Notícias</h2>
+            <p>O Corinthians anuncia a contratação de um novo técnico para a temporada. <a href="#">Leia mais...</a></p>
+            <p>O time se prepara para o próximo clássico contra o rival. Esperamos ver a Fiel lotando a Neo Química Arena! <a href="#">Leia mais...</a></p>
+            <img src="https://static.corinthians.com.br/uploads/svoMmpWT/172840998325f9494a8b43e57793c3c2b3509a4b5e.jpg" alt="Notícias do Corinthians" width="900">
+        </div>
+
+        <div class="section" id="resultados">
+            <h2>Resultados</h2>
+            <p>Últimos jogos:</p>
+            <ul>
+                <li>Corinthians 2 x 1 São Paulo</li>
+                <li>Corinthians 0 x 0 Palmeiras</li>
+                <li>Corinthians 3 x 2 Flamengo</li>
+            </ul>
+        </div>
+        <img src="https://tpc.googlesyndication.com/simgad/10959366976741050416">
+
+        <div class="section" id="jogos">
+            <h2>Próximos Jogos</h2>
+            <p>Veja a agenda dos próximos confrontos:</p>
+            <ul>
+                <li>Corinthians x Santos - 15/10</li>
+                <li>Corinthians x Atlético Mineiro - 22/10</li>
+                <li>Corinthians x Grêmio - 29/10</li>
+            </ul>
+        </div>
+
+        <div class="section" id="equipe">
+            <h2>Equipe</h2>
+            <p>Conheça os jogadores do Timão:</p>
+            <ul>
+                <li>Goleiro: Cássio</li>
+                <li>Defensor: Fágner</li>
+                <li>Meio-campista: Cantillo</li>
+                <li>Atacante: Róger Guedes</li>
+            </ul>
+        </div>
+        
+        <img src="https://tpc.googlesyndication.com/simgad/507940605773920004">
+
+        <div class="section" id="galeria">
+            <h2>Galeria</h2>
+            <div class="gallery">
+                <img src="https://static.corinthians.com.br/uploads/16b72940c3bc37d30f4468b09673dfe5.jpg" alt="Imagem 1">
+                <img src="https://static.corinthians.com.br/uploads/8d491473e6019321af84866baf8f2b72.jpg" alt="Imagem 2">
+                <img src="https://static.corinthians.com.br/uploads/7abcdd1f177bbd8a0bd78480ba781f91.JPG" alt="Imagem 3">
+                <img src="https://static.corinthians.com.br/uploads/0bf2db855b6f804a1f19ed7deb759c12.jpg" alt="Imagem 4">
+                <img src="https://static.corinthians.com.br/uploads/1645214963e152e282bf41bde2251ea0d5fd9f329a.jpeg" alt="Imagem 5">
+            </div>
+        </div>
+
+        <div class="section" id="classificacao">
+            <h2>Tabela de Classificação</h2>
+            <table>
+                <tr>
+                    <th>Posição</th>
+                    <th>Time</th>
+                    <th>Pontos</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Corinthians</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Flamengo</td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Palmeiras</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>São Paulo</td>
+                    <td>39</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section" id="faq">
+            <h2>Perguntas Frequentes</h2>
+            <ul>
+                <li><strong>Como posso comprar ingressos?</strong> Visite a seção de ingressos no nosso site.</li>
+                <li><strong>Quais são os horários dos treinos?</strong> Os treinos são abertos ao público às quartas-feiras.</li>
+                <li><strong>Onde posso encontrar a loja oficial?</strong> A loja oficial está localizada na Neo Química Arena e também disponível online.</li>
+            </ul>
+        </div>
+
+        <div class="section" id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco através do formulário abaixo:</p>
+            <form action="#" method="post">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu Email" required>
+                <textarea name="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
     </div>
-    <p style="color:orange">Após acumular 10 pontos, você receberá um cupom de desconto de 10% na sua próxima compra!</p>
-    <h2 style="color:red">Inscreva-se agora!</h2>
-    <form>
-        <label for="name" style="color:red">Nome:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email" style="color:red">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <input type="submit" value="Inscrever-se">
-    </form>
-    <h2 style="color:red">Benefícios do Programa de Fidelidade</h2>
-    <ul>
-        <li style="color:orange">Descontos exclusivos para membros</li>
-        <li style="color:orange">Ofertas especiais em aniversários</li>
-        <li style="color:orange">Acesso antecipado a novos produtos</li>
-        <li style="color:orange">Convites para eventos exclusivos</li>
-    </ul>
-    <h2 style="color:red">Entre em Contato</h2>
-    <p style="color:orange">Se precisar de ajuda ou tiver alguma dúvida, entre em contato conosco através do email: contato@burgerking.com</p>
-</div>
-
+   
+    <div class="section" id="PATROCINADORES">
+            <h2>PATROCINADORES</h2>
+            <div class="gallery">
+                <img src="https://static.corinthians.com.br/img/logo_ale_h_mono.svg" alt="Imagem 1">
+                <img src="https://static.corinthians.com.br/img/nike.svg" alt="Imagem 2">
+                <img src="https://static.corinthians.com.br/img/esportes_da_sorte_preto_v.png" alt="Imagem 3">
+                <img src="https://static.corinthians.com.br/img/foxlux.svg" alt="Imagem 4">
+                <img src="https://static.corinthians.com.br/img/logo-ze-delivery-avatar.png" alt="Imagem 5">
+                <img src="https://static.corinthians.com.br/img/efootball_H_preto.png" alt="Imagem 6">
+            </div>
+        </div>
+        
+    <footer>
+        <p>&copy; 2024 Sport Club Corinthians Paulista. Todos os direitos reservados.</p>
+        <div class="socials">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+    
 </body>
 </html>
+                        
+
+
+
+
+
